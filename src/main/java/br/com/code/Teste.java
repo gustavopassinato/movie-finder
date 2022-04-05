@@ -1,28 +1,18 @@
 package br.com.code;
 
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-import java.net.http.HttpResponse.BodyHandlers;
+import java.io.IOException;
 
 public class Teste {
-	
-	private static String URL = "https://imdb-api.com/en/API/SearchMovie/k_xj7sg1f9/inception%2010";
-	
-	public static void main(String[] args) {
-		HttpClient client = HttpClient.newHttpClient();
+
+	public static void main(String[] args) throws IOException, InterruptedException {
+		String apiKey = "k_xj7sg1f9";
+		String htmlFileName = "content.html";
 		
-		HttpRequest request = HttpRequest.newBuilder()
-				.uri(URI.create(URL))
-				.GET()
-				.build();
+		ImdbApiClient client = new ImdbApiClient(apiKey, htmlFileName);
 		
+		System.out.println(client.buildHtmlCode());
 		
-		client.sendAsync(request, BodyHandlers.ofString())
-		.thenApply(HttpResponse::body)
-		.thenAccept(System.out::println)
-		.join();
+
 	}
 
 }
