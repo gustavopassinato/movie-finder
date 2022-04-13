@@ -1,7 +1,9 @@
-package br.com.code;
+package br.com.code.data_processing.impl;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import br.com.code.model.Movie;
 
 public class Parser {
 

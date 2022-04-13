@@ -1,4 +1,4 @@
-package br.com.code;
+package br.com.code.data_processing.impl;
 
 import java.io.IOException;
 import java.net.URI;
@@ -8,12 +8,13 @@ import java.net.http.HttpResponse;
 
 public class Consumer {
 	
-	private String ACCESS_LINK = "https://imdb-api.com/en/API/Top250Movies/";
-	
-	public String getMoviesList(String apiKey) throws IOException, InterruptedException {
+	public String getMoviesList(String apiFullAccessLink) throws IOException, InterruptedException {
+		if(apiFullAccessLink.isBlank()) {
+			throw new IllegalArgumentException("The access link to the API is invalid!");
+		}
 		HttpClient client = HttpClient.newHttpClient();
 		
-		String AccessLinkWithKey = ACCESS_LINK + apiKey;
+		String AccessLinkWithKey = apiFullAccessLink;
 		HttpRequest request = HttpRequest.newBuilder().uri(URI.create(AccessLinkWithKey)).build();
 
 		HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());

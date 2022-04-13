@@ -1,8 +1,12 @@
-package br.com.code;
+package br.com.code.day_tests;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import br.com.code.data_processing.impl.Consumer;
+import br.com.code.data_processing.impl.Parser;
+import br.com.code.model.Movie;
 
 public class DiaTres {
 

@@ -1,10 +1,12 @@
-package br.com.code;
+package br.com.code.data_processing.impl;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
+
+import br.com.code.model.Movie;
 
 public class HTMLGenerator {
 

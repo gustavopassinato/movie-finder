@@ -1,4 +1,4 @@
-package br.com.code;
+package br.com.code.day_tests;
 
 import java.io.IOException;
 import java.net.URI;

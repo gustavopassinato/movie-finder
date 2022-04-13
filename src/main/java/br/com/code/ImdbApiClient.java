@@ -6,6 +6,11 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
+import br.com.code.data_processing.impl.Consumer;
+import br.com.code.data_processing.impl.HTMLGenerator;
+import br.com.code.data_processing.impl.Parser;
+import br.com.code.model.Movie;
+
 public class ImdbApiClient {
 
 	private String apiKey;

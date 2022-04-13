@@ -1,21 +1,21 @@
-package br.com.code;
+package br.com.code.model;
 
 public class Movie {
 
-	private String name;
+	private String title;
 	private String year;
 	private String urlImage;
 	private String imdbRating;
 
 	public Movie(String name, String year, String urlImage, String imdbRating) {
-		this.name = name;
+		this.title = name;
 		this.year = year;
 		this.urlImage = urlImage;
 		this.imdbRating = imdbRating;
 	}
 
 	public String getName() {
-		return name;
+		return title;
 	}
 
 	public String getYear() {
@@ -36,7 +36,7 @@ public class Movie {
 	
 	@Override
 	public String toString() {
-		return "[Filme: "+ this.name+", ano: "+ this.year + ", imdb Rating: "+ this.imdbRating;
+		return "[Filme: "+ this.title+", ano: "+ this.year + ", imdb Rating: "+ this.imdbRating;
 	}
 
 }
