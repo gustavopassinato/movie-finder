@@ -13,20 +13,21 @@ import br.com.code.model.Movie;
 
 public class ImdbApiClient {
 
-	private String apiKey;
+	private final String ACCESS_LINK = "https://imdb-api.com/en/API/Top250Movies/";
+	private String fullAccessLink;
 	private Parser parser = new Parser();
 	private Consumer consumer = new Consumer();
 	private HTMLGenerator HtmlGenerator;
 
 	public ImdbApiClient(String apiKey, String htmlName) throws FileNotFoundException {
-		this.apiKey = apiKey;
+		this.fullAccessLink = this.ACCESS_LINK + apiKey;
 		PrintWriter printWriter = new PrintWriter(new File(htmlName));
 		this.HtmlGenerator = new HTMLGenerator(printWriter);
 	}
 
 	public String buildHtmlCode(){
 		try {
-			String json = this.consumer.getMoviesList(this.apiKey);
+			String json = this.consumer.getMoviesList(this.fullAccessLink);
 			
 			List<Movie> moviesList = this.parser.parseToMovie(json);
 			
